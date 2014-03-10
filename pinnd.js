@@ -11,6 +11,7 @@ var pinnd = function(opts) {
 	// Store classes names
 	var _c = {
 		placeholder: 'pinnd-placeholder',
+		pinned: 'pinnd',
 		pinnedtop: 'pinnd-top',
 		pinnedbottom: 'pinnd-bottom'
 
@@ -38,7 +39,7 @@ var pinnd = function(opts) {
 			$.extend(_o, opts);
 
 			// Loop through all elements returned by the selector
-			$(_o.selector).each(function() {
+			$(_o.selector, _o.context).each(function() {
 				// Create an object for each element
 				var e = {};
 				// Set the initial status
@@ -161,7 +162,7 @@ var pinnd = function(opts) {
 			if(e.status == 'pinned-top') return false;
 			e.status = 'pinned-top';
 			e.jq.css({ 'position':'fixed', 'height':e.jq.height(), 'width':e.jq.width(), 'top':_o.offset, 'z-index':_o.zindex });
-			e.jq.removeClass(_c.pinnedbottom).addClass(_c.pinnedtop);
+			e.jq.removeClass(_c.pinnedbottom).addClass(_c.pinnedtop).addClass(_c.pinned);
 			if(typeof _o.onpintop == 'function') _o.onpintop(e.jq);
 		},
 
@@ -176,7 +177,7 @@ var pinnd = function(opts) {
 			if(e.status != 'pinned-top') _private.pinToTop(e);
 			e.status = 'pinned-bottom';
 			e.jq.css({ 'position':'absolute', 'top':'auto', 'bottom':0 });
-			e.jq.removeClass(_c.pinnedtop).addClass(_c.pinnedbottom);
+			e.jq.removeClass(_c.pinnedtop).addClass(_c.pinnedbottom).addClass(_c.pinned);
 			if(typeof _o.onpinbottom == 'function') _o.onpinbottom(e.jq);
 		},
 
@@ -189,7 +190,7 @@ var pinnd = function(opts) {
 			e.status = 'home';
 			// Remove all inline styles and restore initial styles
 			e.jq.removeAttr('style').attr('style',e.styles);
-			e.jq.removeClass(_c.pinnedtop).removeClass(_c.pinnedbottom);
+			e.jq.removeClass(_c.pinnedtop).removeClass(_c.pinnedbottom).removeClass(_c.pinned);
 			if(typeof _o.onunpin == 'function') _o.onunpin(e.jq);
 		}
 
