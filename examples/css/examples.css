@@ -1,0 +1,185 @@
+html * { padding: 0; margin: 0; }
+body { font-size: 75%; font-family: "Trebuchet MS", sans-serif; color: #222; line-height: 1.7em; }
+.page-container { text-align: center; }
+.page { text-align: left; margin: 0 auto; max-width: 960px; width: 100%; position: relative; }
+.header { background-color: #104771; }
+.header h1 { 
+    color: #fff;
+    padding: 50px 0 20px 310px;
+    font-weight: normal;
+}
+.left { 
+    background-color: #fff; 
+    float: left; 
+    width: 30%; 
+    padding: 20px 20px 0 0; 
+    margin-top: -52px; 
+    color: #666; 
+    border-radius: 0px 20px 20px 0px; 
+    box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+}
+.context .left { background-color: #efefef; }
+.right {
+    float: left; 
+    width: 70%; 
+    padding: 0px 0; 
+    box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+}
+.nav {
+    background-color: #444;
+    border-radius: 0px 10px 10px 0px; 
+    padding: 10px;
+    margin: 0;
+}
+.nav li {
+    list-style: none;
+}
+.nav li li a:before {
+    content: '>';
+    padding: 0 10px 0 20px;
+}
+.nav a {
+    display: block;
+    text-decoration: none;
+    color: #bbb; 
+    padding: 5px;
+    margin-bottom: 5px;
+}
+.nav a.main-active, .nav a:hover, .nav a:focus {
+    background-color: #666; 
+    color: #fff; 
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+}
+.nav a.sub-active, .nav li li a:hover, .nav li li a:focus {
+    background-color: #555; 
+    color: #aaa; 
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+}
+.nav li.info { padding: 20px 0 0; } 
+.nav li.info h2 { 
+    background-color: #333; 
+    padding: 5px 10px; 
+    color: #888; 
+    font-size: 14px; 
+    font-weight: normal; 
+    text-transform: uppercase; 
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+}
+.nav li.info div[class^=status] { 
+    padding: 3px 5px;
+    background-color: #555;
+    color: #bbb;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+.nav.pinnd li.info div.status-pinnd,
+.nav.pinnd-top li.info div.status-pinnd-top,
+.nav.pinnd-bottom li.info div.status-pinnd-bottom {
+    background-color: #7fba41;
+    color: #fff;
+}
+.nav .status-toggle { 
+    cursor: pointer;
+    background-color: #333;
+    margin-top: 10px;
+    border-radius: 0 5px 5px 0;
+    -webkit-border-radius: 0 5px 5px 0;
+    -moz-border-radius: 0 5px 5px 0;
+}
+.nav .status-toggle:hover,
+.nav .status-toggle:focus { 
+    background-color: #222;
+}
+.nav .status-toggle.status-enabled { color: #7fba41; }
+.nav .status-toggle.status-enabled:after { content: 'Enabled - click to disable'; }
+
+.nav .status-toggle.status-disabled { color: #d9262f; }
+.nav .status-toggle.status-disabled:after { content: 'Disabled - click to enable'; }
+
+.nav .status-indicator {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1em;
+    margin: 0 7px;
+    height: 10px;
+    width: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+.nav .status-enabled .status-indicator {
+    background-color: #7fba41;
+}
+.nav .status-disabled .status-indicator {
+    background-color: red;
+}
+
+
+p {
+    margin: 15px 0 0;
+}
+pre {
+    display: block;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #7fba41;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.3em;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+code {
+    font-size: 12px;
+    color: #666;
+    background-color: #ddd;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    padding: 0px 2px;
+    border: 1px solid #bbb;
+}
+
+.page-container {
+    padding: 20px 0;
+}
+.page-container:first-of-type {
+    padding-top: 0;
+}
+
+.content-header {
+    background-color: #17629a; 
+    color: #a2caf6; 
+    padding: 20px; 
+    border-radius: 0 0 15px 15px; 
+    margin: 20px 0 0;    
+}
+.content-header:first-of-type {
+    margin-top: 0;
+}
+
+
+.dummy-text {
+    color: #999;
+}
+.content-header.dummy-text {
+    background-color: #ddd;
+    color: #fff;
+}
+
+
+.right ul, .right ol { margin: 15px 0 15px 30px; }
+.right ol li { list-style: decimal; }
+.right ul li { list-style: disc; }
