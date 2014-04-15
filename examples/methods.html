@@ -61,9 +61,19 @@ var opts = {
     selector: '.content-header',
     context: '.pinnd-context',
 }
-var test = pinnd(opts);
+var headers_pinnd = pinnd(opts);
 
-$('a')
+$('a.status-toggle').on('click', function(e) {
+    var enabled = $(this).hasClass('status-enabled');
+    var link = $(this);
+    if(enabled) {
+        headers_pinnd.disable();
+        link.removeClass('status-enabled').addClass('status-disabled');
+    } else {
+        headers_pinnd.enable();
+        link.removeClass('status-disabled').addClass('status-enabled');
+    }
+});
 </pre>
                 
 
